@@ -3,6 +3,7 @@ import os
 from typing import Final
 from dotenv import load_dotenv                                      #pip install python-dotenv
 from discord import *                                               #pip install discord
+from base_functions import *
 
 # Environment Setup
 load_dotenv()
@@ -24,3 +25,11 @@ tree = app_commands.CommandTree(client)
 async def on_ready() -> None:
     await tree.sync(guild=Object(id=ID_S))
     print(f"Logged in as {client.user.name} succesfully!")
+
+# On message event
+@client.event
+async def on_message(message: Message) -> None:
+    if message.author.bot:
+        return
+    uid: str = str(message.author.id)
+    mine(uid,message)
