@@ -1,4 +1,5 @@
 # Library
+import time
 import os
 from typing import Final
 from dotenv import load_dotenv                                      #pip install python-dotenv
@@ -11,7 +12,6 @@ TOKEN: Final[str] = os.getenv("BOT_TOKEN")
 ID_AU: Final[list] = os.getenv("AUTHORIZED_USER_ID").split(",")
 ID_AC: Final[list] = os.getenv("ANNOUNCEMENT_CHANNEL_ID").split(",")
 ID_S: Final[str] = os.getenv("SERVER_ID")
-GTC: Final[int] = int(os.getenv("GREEN_TOKEN_CHANCE"))
 LTP: Final[int] = int(os.getenv("LOTTERY_TICKET_PRICE"))
 
 # Bot setup
@@ -31,5 +31,16 @@ async def on_ready() -> None:
 async def on_message(message: Message) -> None:
     if message.author.bot:
         return
+    
+    # Function variable
     uid: str = str(message.author.id)
-    mine(uid,message)
+    user_name: str = str(message.author)
+
+    # coin minning
+    mine(uid,user_name)
+
+# Main entry point
+def main() -> None:
+    client.run(token=TOKEN)
+if __name__ == "__main__":
+    main()
