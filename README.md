@@ -8,7 +8,7 @@ Reconstruction
 
 ❌ Balance Command 
 
-❌ Dollar and Green Token Minting
+✅ Dollar and Green Token Minting - ❌ tested and debuged
 
 ❌ Lottery
 
