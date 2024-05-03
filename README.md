@@ -8,7 +8,9 @@ Reconstruction
 
 ❌ Balance Command 
 
-✅ Dollar and Green Token Minting - ❌ tested and debuged
+✅ Dollar and Green Token Minting - ✅ tested and debuged
+
+🈶bug: Green Token announcement not working 
 
 ❌ Lottery
 
