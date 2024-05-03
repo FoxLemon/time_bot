@@ -10,7 +10,7 @@ Reconstruction
 
 ✅ Dollar and Green Token Minting - ✅ tested and debuged
 
-🈶bug: Green Token announcement not working 
+❗🈶bug: Green Token announcement not working 
 
 ❌ Lottery
 
