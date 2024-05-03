@@ -17,7 +17,7 @@ def new_user_data(uid: str,user_name: str) -> None:
     new_user = user_data()
     new_user["users"][uid] = dict()
     new_user["users"][uid]["name"] = user_name
-    new_user["users"][uid]["balance"] = 0
+    new_user["users"][uid]["balance"] = 1
     new_user["users"][uid]["green_token_balance"] = 0
     new_user["users"][uid]["message_multiplier"] = 1
     save_data(new_user)
