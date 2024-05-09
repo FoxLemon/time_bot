@@ -10,14 +10,8 @@ from random import randint
 load_dotenv()
 data: dict = user_data()
 
-# Bot setup
-intents: Intents = Intents.all()
-intents.message_content = True
-client: Client = Client(intents=intents)
-
 # Environment Setup
 GTC: Final[int] = int(os.getenv("GREEN_TOKEN_CHANCE"))
-ID_AC: Final[list] = os.getenv("ANNOUNCEMENT_CHANNEL_ID").split(",")
 
 # Mining function
 def mine(uid: str,user_name: str) -> bool:
