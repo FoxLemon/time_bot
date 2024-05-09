@@ -8,7 +8,7 @@ Reconstruction
 
 ❗🈶bug: Green Token announcement not working 
 
-➡❌ Way to react to commands for:
+❌ Way to react to commands for:
 
 ➡❌ Pay Command
 
