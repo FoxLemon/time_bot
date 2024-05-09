@@ -20,7 +20,7 @@ GTC: Final[int] = int(os.getenv("GREEN_TOKEN_CHANCE"))
 ID_AC: Final[list] = os.getenv("ANNOUNCEMENT_CHANNEL_ID").split(",")
 
 # Mining function
-def mine(uid: str,user_name: str) -> None:
+def mine(uid: str,user_name: str) -> bool:
     # set up the data for new user
     if uid not in data["users"]:
         new_user_data(uid,user_name)
@@ -31,12 +31,8 @@ def mine(uid: str,user_name: str) -> None:
     # Green token mining
     if randint(1,1000) <= GTC:
         data["users"][uid]["green_token_balance"] += 1
-
-        # send announcement to all the announcement channel ❗Buged
-        for ac_id in ID_AC:
-            announcement_channel = client.get_channel(ac_id)
-            if announcement_channel:
-                announcement_channel.send(f"🎉 <@{uid}> has minted a Green Token!")
+        return True
     
     # Save data changes
     save_data(data)
+    return False

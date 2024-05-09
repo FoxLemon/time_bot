@@ -10,8 +10,8 @@ from base_functions import *
 load_dotenv()
 TOKEN: Final[str] = os.getenv("BOT_TOKEN")
 ID_AU: Final[list] = os.getenv("AUTHORIZED_USER_ID").split(",")
-ID_AC: Final[list] = os.getenv("ANNOUNCEMENT_CHANNEL_ID").split(",")
-ID_S: Final[str] = os.getenv("SERVER_ID")
+ID_AC: Final[int] = int(os.getenv("ANNOUNCEMENT_CHANNEL_ID"))
+ID_S: Final[int] = os.getenv("SERVER_ID")
 LTP: Final[int] = int(os.getenv("LOTTERY_TICKET_PRICE"))
 
 # Bot setup
@@ -37,7 +37,11 @@ async def on_message(message: Message) -> None:
     user_name: str = str(message.author)
 
     # coin minning
-    mine(uid,user_name)
+    if mine(uid,user_name):
+        # send announcement to the announcement channel
+        announcement_channel = client.get_channel(ID_AC)
+        if announcement_channel:
+            await announcement_channel.send(f"🎉 <@{uid}> has minted a Green Token!")
 
 # Main entry point
 def main() -> None:

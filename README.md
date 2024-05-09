@@ -6,8 +6,6 @@ Reconstruction
 
 ✅ Dollar and Green Token Minting - ✅ tested and debuged
 
-❗🈶bug: Green Token announcement not working 
-
 ❌ Way to react to commands for:
 
 ➡❌ Pay Command
