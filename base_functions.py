@@ -31,6 +31,8 @@ def mine(uid: str,user_name: str) -> None:
     # Green token mining
     if randint(1,1000) <= GTC:
         data["users"][uid]["green_token_balance"] += 1
+
+        # send announcement to all the announcement channel ❗Buged
         for ac_id in ID_AC:
             announcement_channel = client.get_channel(ac_id)
             if announcement_channel:
