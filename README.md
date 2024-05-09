@@ -4,15 +4,19 @@ Reconstruction
 ✅ User Balances (monry balances) - ✅ Green Token Balances
 (both are in one json file)
 
-❌ Pay Command
-
-❌ Balance Command 
-
 ✅ Dollar and Green Token Minting - ✅ tested and debuged
 
 ❗🈶bug: Green Token announcement not working 
 
-❌ Lottery
+❌ Way to react to commands for:(
+
+    ❌ Pay Command
+
+    ❌ Balance Command 
+
+    ❌ Help Command
+
+    ETC......
 
 ❌ Gambling Features
 
@@ -22,7 +26,7 @@ Reconstruction
 
 ❌ Shop
 
-❌ Help Command
+❌ Lottery
 
 ❌ Green Token Transferring
 
