@@ -8,15 +8,15 @@ Reconstruction
 
 ❗🈶bug: Green Token announcement not working 
 
-❌ Way to react to commands for:(
+➡❌ Way to react to commands for:
 
-    ❌ Pay Command
+➡❌ Pay Command
 
-    ❌ Balance Command 
+➡❌ Balance Command 
 
-    ❌ Help Command
+➡❌ Help Command
 
-    ETC......
+➡ETC......
 
 ❌ Gambling Features
 
