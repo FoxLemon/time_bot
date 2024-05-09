@@ -1,7 +1,7 @@
 Time bot
 Reconstruction
 
-✅ User Balances (monry balances) - ✅ Green Token Balances
+✅ User Balances - ✅ Green Token Balances
 (both are in one json file)
 
 ✅ Dollar and Green Token Minting - ✅ tested and debuged
