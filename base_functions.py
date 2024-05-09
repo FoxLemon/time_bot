@@ -24,7 +24,6 @@ def mine(uid: str,user_name: str) -> None:
     # set up the data for new user
     if uid not in data["users"]:
         new_user_data(uid,user_name)
-        return
 
     # Add the coin mined to the user balance
     data["users"][uid]["balance"] += data["users"][uid]["message_multiplier"]
