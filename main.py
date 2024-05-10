@@ -1,9 +1,10 @@
 # Library
-import time
 import os
+import discord
 from typing import Final
 from dotenv import load_dotenv                                      #pip install python-dotenv
 from discord import *                                               #pip install discord
+from discord.ext import commands
 from base_functions import *
 
 # Environment Setup
@@ -11,7 +12,7 @@ load_dotenv()
 TOKEN: Final[str] = os.getenv("BOT_TOKEN")
 ID_AU: Final[list] = os.getenv("AUTHORIZED_USER_ID").split(",")
 ID_AC: Final[int] = int(os.getenv("ANNOUNCEMENT_CHANNEL_ID"))
-ID_S: Final[int] = os.getenv("SERVER_ID")
+ID_S: Final[str] = os.getenv("SERVER_ID")
 LTP: Final[int] = int(os.getenv("LOTTERY_TICKET_PRICE"))
 
 # Bot setup
@@ -28,13 +29,13 @@ async def on_ready() -> None:
 
 # On message event
 @client.event
-async def on_message(message: Message) -> None:
-    if message.author.bot:
+async def on_message(ctx: Message) -> None:
+    if ctx.author.bot:
         return
     
     # Function variable
-    uid: str = str(message.author.id)
-    user_name: str = str(message.author)
+    uid: str = str(ctx.author.id)
+    user_name: str = str(ctx.author)
 
     # coin minning
     if mine(uid,user_name):
@@ -42,6 +43,14 @@ async def on_message(message: Message) -> None:
         announcement_channel = client.get_channel(ID_AC)
         if announcement_channel:
             await announcement_channel.send(f"🎉 <@{uid}> has minted a Green Token!")
+
+@tree.command(
+    name="balance",
+    description="tell you your balance.")
+async def balance(inter: Interaction) -> None:
+    user = user_data()["user"][str(inter.user.id)]
+    await inter.response.send_message(f"{user['name']} have {user['balance']} in balance, and {user['green_token_balance']} green tokens")
+
 
 # Main entry point
 def main() -> None:
