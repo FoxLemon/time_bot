@@ -7,7 +7,7 @@ from dotenv import load_dotenv
     # The Bot Token from Discord.
 TOKEN: str = os.getenv("BOT_TOKEN")
     # The Channel ID where announcements (Minted Green Tokens, Milestones, Lottery, etc..)
-ANNOUNCEMENT_ID: int = 1235996734056824892
+ANNOUNCEMENT_ID: int = 000
     # The ID of the user that should have access to admin commands.
 ADMINS: list = []
     # ID of the server that the bot should be in.
