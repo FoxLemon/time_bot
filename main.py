@@ -18,8 +18,8 @@ async def on_ready() -> None:
 # On message events: mining etc...
 @bot.event
 async def on_message(ctx: Message):
+    await bot.process_commands(ctx)
     if ctx.author.bot: return
-
     # Mining
     if mine(ctx):
         # send announcement to the announcement channel
@@ -27,9 +27,9 @@ async def on_message(ctx: Message):
         if announcement_channel:
             await announcement_channel.send(f"🎉 <@{ctx.author}> has minted a Green Token!")
     
-# @bot.hybrid_command()
-# async def ping(ctx):
-#     await ctx.send_message("pong")
+@bot.hybrid_command()
+async def ping(ctx):
+    await ctx.send_message("pong")
 
 # Main entery point
 def main() -> None:
