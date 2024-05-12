@@ -15,15 +15,15 @@ def mine(ctx: Message) -> bool:
     name: str = str(ctx.author)
     
     # set up the data for new user
-    if uid not in data["users"]:
+    if uid not in data:
         new_user_data(uid,name)
 
     # Add the coin mined to the user balance
-    data["users"][uid]["balance"] += data["users"][uid]["message_multiplier"]
+    data[uid]["balance"] += data[uid]["message_multiplier"]
 
     # Green token mining
     if randint(1,1000) <= setting.GREEN_TOKEN_CHANCE:
-        data["users"][uid]["green_token_balance"] += 1
+        data[uid]["green_token_balance"] += 1
         return True
     
     # Save data changes
