@@ -6,13 +6,13 @@ Reconstruction
 
 ✅ Dollar and Green Token Minting - ✅ tested and debuged
 
-❌ Way to react to commands for:
+✅ Way to react to commands for:
 
-➡❌ Pay Command
+➡✅ Pay Command  ❌ green token transfar?
 
-➡❌ Balance Command 
+➡✅ Balance Command 
 
-➡❌ Help Command
+➡✅ Help Command
 
 ➡ETC......
 

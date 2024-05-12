@@ -1,5 +1,6 @@
 # Library
 import json
+from discord import *
 
 # Varable
 data = r"" #path to your data file
@@ -21,3 +22,9 @@ def new_user_data(uid: str,user_name: str) -> None:
     new_user[uid]["green_token_balance"] = 0
     new_user[uid]["message_multiplier"] = 1
     save_data(new_user)
+# Set up a new data for use if there aren't data about that user
+def check_user(ctx: Message):
+    uid: str = str(ctx.author.id)
+    data = user_data()
+    if uid not in data:
+        new_user_data(uid,str(ctx.author))
