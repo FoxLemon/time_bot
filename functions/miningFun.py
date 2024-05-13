@@ -1,5 +1,4 @@
 # Library
-from typing import Final
 from discord import *
 from functions.balanceFun import *
 from random import randint
@@ -11,7 +10,7 @@ def mine(ctx: Message) -> bool:
     uid: str = str(ctx.author.id)
 
     # check if user exist and load data
-    check_user(ctx)
+    check_user(uid,str(ctx.author))
     data: dict = user_data()
 
     # Add the coin mined to the user balance
