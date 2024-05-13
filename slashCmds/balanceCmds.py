@@ -6,8 +6,8 @@ from discord.ext import commands
 # check the balance of the one who call the command
 @commands.hybrid_command()
 async def balance(ctx: Message) -> None:
-    # Description
-    """Checks your balance"""
+    # Command Description
+    """Checks your balance."""
     # Function variable
     uid: str = str(ctx.author.id)
     name: str = str(ctx.author)
@@ -18,9 +18,12 @@ async def balance(ctx: Message) -> None:
 
 # check the balance of the user user wanted
 @commands.hybrid_command()
-async def balanceof(ctx: Message, user: Member) -> None:
-    # Description
-    """Checks the balance of another user"""
+async def balanceof(ctx: Message, user: Member = commands.parameter(
+    # Description of user arg
+    description="- the person you want to check the balance of.")) -> None:
+
+    # Command Description
+    """Checks the balance of another user."""
     # Function variable
     uid: str = str(user.id)
     name: str = str(user.name)
@@ -31,9 +34,14 @@ async def balanceof(ctx: Message, user: Member) -> None:
 
 # pay the other user
 @commands.hybrid_command()
-async def pay(ctx: Message, user: Member, amount: int) -> None:
-    # Description
-    """Pay the other user"""
+async def pay(ctx: Message, user: Member= commands.parameter(
+    # Description of user arg
+    description="- the person you want to pay to."), amount: int = commands.parameter(
+    # Description of amount arg
+    description="- the amount you want to pay to that person.")) -> None:
+
+    # Command Description
+    """Pay the other user."""
     # Check
     check_user(str(ctx.author.id),str(ctx.author))
     check_user(str(user.id),str(user.name))
