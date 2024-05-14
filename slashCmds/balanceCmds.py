@@ -52,15 +52,50 @@ async def pay(ctx: Message, user: Member= commands.parameter(
     # balance in to:
     bIn: dict = data[str(user.id)]
     # transaction
+    if bOut["balance"] < amount:
+        await ctx.send(f"payment failed, you do not have enough money.")
+        return
     bOut["balance"] -= amount
     bIn["balance"] += amount
     save_data(data)
     #send message to the payer
     await ctx.send(f"you've payed {user.name} ${amount}")
     #send message to the receiver
-    # await ctx.send(f"@{user.name.capitalize()} you have received ${amount} from {ctx.author} ")
+    await user.send(f"you have received ${amount} from {ctx.author}.")
+
+# pay the other user with green token
+@commands.hybrid_command()
+async def greentran(ctx: Message, user: Member= commands.parameter(
+    # Description of user arg
+    description="- the person you want to pay to."), amount: int = commands.parameter(
+    # Description of amount arg
+    description="- the amount you want to pay to that person.")) -> None:
+
+    # Command Description
+    """Pay the other user with green token."""
+    # Check
+    check_user(str(ctx.author.id),str(ctx.author))
+    check_user(str(user.id),str(user.name))
+    # Function variable
+    data: dict = user_data()
+    # balance out from:
+    bOut: dict = data[str(ctx.author.id)]
+    # balance in to:
+    bIn: dict = data[str(user.id)]
+    # transaction
+    if bOut["green_token_balance"] < amount:
+        await ctx.send(f"payment failed, you do not have enough green tokens.")
+        return
+    bOut["green_token_balance"] -= amount
+    bIn["green_token_balance"] += amount
+    save_data(data)
+    #send message to the payer
+    await ctx.send(f"you've payed {user.name} {amount} green tokens.")
+    #send message to the receiver
+    await user.send(f"you have received {amount} green tokens from {ctx.author}.")
 
 async def setup(bot):
     bot.add_command(balance)
     bot.add_command(balanceof)
     bot.add_command(pay)
+    bot.add_command(greentran)
