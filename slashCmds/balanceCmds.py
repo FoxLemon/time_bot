@@ -94,6 +94,7 @@ async def greentran(ctx: Message, user: Member= commands.parameter(
     #send message to the receiver
     await user.send(f"you have received {amount} green tokens from {ctx.author}.")
 
+# Entry point
 async def setup(bot):
     bot.add_command(balance)
     bot.add_command(balanceof)
