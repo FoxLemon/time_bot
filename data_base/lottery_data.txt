@@ -1,0 +1,12 @@
+{
+    "lottery_status": false,
+    "involvement": {
+        "example_id": {
+            "name": "example_name",
+            "tickests_owned": []
+        }
+    },
+    "prize_pool": 0,
+    "tickets": [],
+    "tickets_tracking": 0
+}
