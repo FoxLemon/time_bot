@@ -10,7 +10,7 @@ Reconstruction
 
 ➡✅ Pay Command  
 
-➡✅ green token transfar?
+➡✅ green token transfar
 
 ➡✅ Balance Command 
 
