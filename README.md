@@ -14,6 +14,8 @@ Reconstruction
 
 ➡✅ Help Command
 
+➡❌ Lottery Command ✅ basic function
+
 ➡ETC......
 
 ❌ Gambling Features
@@ -23,8 +25,6 @@ Reconstruction
 ❌ Minted Amount Counter
 
 ❌ Shop
-
-❌ Lottery
 
 ❌ Green Token Transferring
 
