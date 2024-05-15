@@ -25,11 +25,12 @@ async def on_ready() -> None:
 async def on_message(ctx: Message) -> None:
     if ctx.author.bot: return
     # Mining
-    if mine(ctx):
-        # send announcement to the announcement channel
-        announcement_channel = bot.get_channel(setting.ANNOUNCEMENT_ID)
-        if announcement_channel:
-            await announcement_channel.send(f"🎉 <@{ctx.author}> has minted a Green Token!")
+    if ctx.guild:
+        if mine(ctx):
+            # send announcement to the announcement channel
+            announcement_channel = bot.get_channel(setting.ANNOUNCEMENT_ID)
+            if announcement_channel:
+                await announcement_channel.send(f"🎉 <@{ctx.author}> has minted a Green Token!")
     
     # command running
     await bot.process_commands(ctx)
