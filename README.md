@@ -8,7 +8,9 @@ Reconstruction
 
 ✅ Way to react to commands for:
 
-➡✅ Pay Command  ❌ green token transfar?
+➡✅ Pay Command  
+
+➡✅ green token transfar?
 
 ➡✅ Balance Command 
 
